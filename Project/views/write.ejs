@@ -1,0 +1,23 @@
+<html>
+    <%- include("./partials/header.ejs") %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+        <h1 style="color:white;text-align: center;">From Python to Node,Welcome to the Project</h1>
+        <div style="text-align: center;">
+            <h2>Write a new Post</h2>
+            <form action="/new-post" method="POST"> 
+                <label for="title">Post Title : </label>
+                <input type="text" id="ptitle" name="title">
+                <br>
+                <label for="post">Message : </label>
+                <textarea id="ptext" name="snippet" required></textarea>
+                <br>
+                <button>Submit</button>
+            </form>
+        </div>
+        <%- include("./partials/footer.ejs") %>
+
+    </body>
+</html>

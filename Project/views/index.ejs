@@ -1,0 +1,24 @@
+<html>
+    <%- include("./partials/header.ejs") %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+        <h1 style="color:white;text-align: center;">From Python to Node,Welcome to the Project</h1>
+
+        <div>
+            <% if (posts.length>0) { %>
+                <% posts.forEach((post)=>{ %>
+                    <div class="post">
+                    <h3 class="title"><%= post.title %></h3>
+                    <p class="snippet"><%= post.post %></p>
+                    </div>
+                <br>
+                <% }) %>
+            <% } else { %>
+                <h3 style="color: red;">No posts found</h3>
+                <% } %>
+        </div>
+        <%- include("./partials/footer.ejs") %>
+
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <%- include("./partials/header.ejs") %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+        <h1 style="color:white;text-align: center;"><%= post.title %></h1>
+                    <div class="post" style="text-align:center;margin: 4px">
+                    <p class="snippet"><%= post.snippet %></p>
+                    <a class="delete" style="background-color: grey; padding: 4px;;" data-doc="<%= post._id %>">Delete Post</a>
+
+                </div>
+                
+        <%- include("./partials/footer.ejs") %>
+    
+    <script>
+        const result = document.querySelector('a.delete');
+        result.addEventListener('click', (e) => {
+          const endpoint = `/show-posts/${result.dataset.doc}`;
+          fetch(endpoint, {
+            method: 'DELETE',
+          })
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(err => console.log(err));
+        });
+    </script>
+    </body>
+</html>

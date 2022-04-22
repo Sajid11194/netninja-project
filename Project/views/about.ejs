@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title> <%= title %> | By <%= admin %></title>
+        <style>
+            body {
+                background-color: #171717;
+                color:white;
+            }
+            a{
+                color:white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+        <h1 style="text-align: center;">Hi it's Sajid</h1>
+    <div class="about content">
+        <p style="text-align: center;">About us text</p>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+
+    </body>
+</html>
